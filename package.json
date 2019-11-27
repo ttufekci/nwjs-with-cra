@@ -5,6 +5,7 @@
   "private": true,
   "homepage": ".",
   "node-remote": "http://localhost:3000",
+  "chromium-args": "--disable-features=nw2",
   "build": {
     "nwVersion": "0.42.5"
   },
