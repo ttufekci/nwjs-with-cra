@@ -1,7 +1,7 @@
 {
   "name": "nwjs-with-cra",
   "main": "./public/main.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": ".",
   "node-remote": "http://localhost:3000",
