@@ -23,7 +23,7 @@
     "prenwjs-reactbuild": "yarn build",
     "nwjs-pack": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
     "prenwjs-pack": "yarn build",
-    "nwjs-dev": "cross-env BROWSER=none NWJS_START_URL=http://localhost:3000 concurrently \"yarn start\" \"wait-on http://localhost:3000 && nw .\" "
+    "nwjs-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && cross-env NWJS_START_URL=http://localhost:3000 nw .\" "
   },
   "eslintConfig": {
     "extends": "react-app"
