@@ -14,6 +14,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "postinstall": "cross-env-shell npm install --no-save nw@$npm_package_build_nwVersion --nwjs_build_type=sdk",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
