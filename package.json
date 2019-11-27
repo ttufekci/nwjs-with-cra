@@ -20,10 +20,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nwjs-reactbuild": "nw .",
-    "prenwjs-reactbuild": "yarn build",
+    "prenwjs-reactbuild": "npm build",
     "nwjs-pack": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
-    "prenwjs-pack": "yarn build",
-    "nwjs-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && cross-env NWJS_START_URL=http://localhost:3000 nw .\" "
+    "prenwjs-pack": "npm build",
+    "nwjs-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && cross-env NWJS_START_URL=http://localhost:3000 nw .\" "
   },
   "eslintConfig": {
     "extends": "react-app"
