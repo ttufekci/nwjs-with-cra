@@ -6,7 +6,7 @@
   "homepage": ".",
   "node-remote": "http://localhost:3000",
   "build": {
-    "nwVersion": "0.39.3"
+    "nwVersion": "0.42.5"
   },
   "dependencies": {
     "react": "^16.8.6",
