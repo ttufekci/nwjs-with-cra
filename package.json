@@ -28,18 +28,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "Chrome >= 78",
+    "node >= 13.1.0"
+  ],
   "devDependencies": {
     "concurrently": "^5.0.0",
     "cross-env": "^6.0.3",
