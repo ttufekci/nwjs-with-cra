@@ -1,46 +1,45 @@
 {
   "name": "nwjs-with-cra",
-  "main": "./public/main.js",
-  "version": "0.1.0",
+  "main": "./build/main.js",
+  "version": "0.2.0",
   "private": true,
   "homepage": ".",
   "node-remote": "http://localhost:3000",
+  "chromium-args": "--disable-features=nw2",
   "build": {
-    "nwVersion": "0.39.3"
+    "nwVersion": "0.42.5",
+    "files": [
+      "build/**",
+      "package.json"
+    ]
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
+    "postinstall": "cross-env-shell npm install --no-save nw@$npm_package_build_nwVersion-sdk",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nwjs-reactbuild": "nw .",
-    "prenwjs-reactbuild": "yarn build",
+    "prenwjs-reactbuild": "npm run build",
     "nwjs-pack": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
-    "prenwjs-pack": "yarn build",
-    "nwjs-dev": "concurrently \"set BROWSER=none&&yarn start\" \"wait-on http://localhost:3000 &&set NWJS_START_URL=http://localhost:3000&&nw .\" "
+    "prenwjs-pack": "npm run build",
+    "nwjs-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && cross-env NWJS_START_URL=http://localhost:3000 nw --load-extension=extensions/react-devtools/ .\" "
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "Chrome >= 78",
+    "node >= 13.1.0"
+  ],
   "devDependencies": {
-    "concurrently": "^4.1.1",
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.3",
     "nwjs-builder-phoenix": "^1.15.0",
     "wait-on": "^3.3.0"
   }
