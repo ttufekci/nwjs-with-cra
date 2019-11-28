@@ -21,9 +21,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nwjs-reactbuild": "nw .",
-    "prenwjs-reactbuild": "npm build",
+    "prenwjs-reactbuild": "npm run build",
     "nwjs-pack": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://dl.nwjs.io/ .",
-    "prenwjs-pack": "npm build",
+    "prenwjs-pack": "npm run build",
     "nwjs-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && cross-env NWJS_START_URL=http://localhost:3000 nw --load-extension=extensions/react-devtools/ .\" "
   },
   "eslintConfig": {
